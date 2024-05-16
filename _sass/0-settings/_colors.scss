@@ -9,7 +9,6 @@ $red-color: #ee6c6c;
 $green-color: #55bf55;
 $white-color: #ffffff;
 
-
 $dark: #222222;
 $dark-gray: #333333;
 $darkest: #444444;
@@ -29,19 +28,77 @@ $blue-dark: #263959;
 $background: #fbfbfb;
 $alternate-background: #fafafa;
 
-
 // Body Color
 $text-color: #404040;
 
-
 // Headings
 $heading-font-color: #404040;
-
 
 // Links
 $link-color: $primary-color;
 $link-color-hover: darken($link-color, 15%);
 
-
 // Border
 $border-color: #f0f0f0;
+
+/* ===============
+	THEME COLOR
+=============== */
+
+html {
+	--background: #fbfbfb;	
+	--sidebar: linear-gradient(180deg, 
+		#67A2A8 0%, #6DA7AB 8%, #71ACB0 12%, #7FB9BD 31%, #8AC1C6 38%, 
+		#94C5CA 44%, #A2C9CE 50%, #A5CAD0 52%, #A7CAD0 54%, #AECDD2 55%,
+		#C3D2D9 60%, #CFD8DD 65%, #DCE1E5 71%, #E2E7EB 75%, #E4E4EC 100%
+	);
+	--text-color: #404040;
+	--sidebar-text-color: #757575;
+	--grey1: #5F5E58;
+	--grey2: #8D897C;
+	--grey3: #B4B3A7;
+	--grey4: #DAD7D2;
+	--grey5: #F0EFED;
+	--postcard-background: #ffffff;
+	--postcard-title: #263959;
+	--search-text-border: rgba(46, 61, 73, .15);
+	--postbox-shadow: 5px 5px 25px rgba(46, 61, 73, .15);
+	--postbox-hover-shadow: 2px 4px 8px 0px rgba(46, 61, 73, 0.2);
+	--postcard-shadow: 0 1px 1px 0 rgba(31, 35, 46, .15);
+	--postcard-hover-shadow: 0 15px 45px -10px rgba(10, 16, 34, .2);
+	--shadow: rgba(32,30,30,.3);
+	--toc-backgroudColor: aliceblue;
+	--xBurger: #fbfbfb;
+	--threeBurger: #404040;
+    transition: all 0.9s;
+	--markLinear: #ffd600;
+}
+
+html[data-theme="dark"]  {
+	--background: #2B323B;
+	--sidebar: linear-gradient(70deg, 
+		#1F315A 0%, #1C264C 33%, #37375E 41%, #59476E 48%, #815C8C 52%, 
+		#AC75A6 54%, #DB99BE 56%, #F6B7D6 60%, #E991C4 67%, #E9B2D7 73%,
+		#B788C4 76%, #856BA5 82%, #5C557D 90%, #49425C 94%, #352E46 100%
+	);
+	--text-color: #CBCCCD;
+	--sidebar-text-color: #EDEEEE;
+	--grey1: #B1B1AE;
+	--grey2: #959692;
+	--grey3: #7C7E7B;
+	--grey4: #636564;
+	--grey5: #3B3D40;
+	--shadow: rgba(0,0,0,.3);
+	--postcard-background: #2B323B;
+	--postcard-title: $gray-lighter;
+	--search-text-border: rgba(150, 150, 199, .4);
+	--postbox-shadow: 5px 5px 25px rgba(150, 150, 199, .4);
+	--postbox-hover-shadow: 2px 4px 8px 0px rgba(150, 150, 199);
+	--postcard-shadow: 0.5px 1px 2px 0 rgba(150, 150, 199, 0.3); 
+	--postcard-hover-shadow: 0 15px 45px -10px rgba(150, 150, 199);
+	--toc-backgroudColor: rgb(64, 79, 71);
+	--xBurger: #2B323B;
+	--threeBurger: #CBCCCD;
+    transition: all 0.9s;
+	--markLinear: #206152;
+}

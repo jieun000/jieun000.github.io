@@ -1,22 +1,12 @@
 ---
 layout: home
 ---
-<article class="c-article">
+{% include header.html %}
+<article class="c-article o-opacity">
   <div class="c-article__content">
-    <header class="c-header u-hide u-no-margin-top">
-      <div class="c-header__box">
-        <div class="c-search u-full-width">
-          <div class="c-search__box">
-            <label for="js-search-input" class="u-screen-reader-text">Search for Blog</label>
-            <input type="text" id="js-search-input" class="c-search__text" autocomplete="off" placeholder="Type to search...">
-            <div data-icon='ei-search' data-size='s'></div>
-          </div>
-          <ul id="js-results-container" class="c-search-results-list"></ul>
-        </div>
-      </div>
-    </header>
+    
     {% if page.image %}
-    <div class="c-article__image o-opacity" style="background-image: url( {{"/images/" | prepend: site.baseurl | append : page.image}} )"></div>
+      <div class="c-article__image o-opacity" style="background-image: url( {{"/assets/" | prepend: site.baseurl | append : page.image}} )"></div>
     {% else %}
     {% endif %}
     <div class="c-wrap-content">
@@ -26,43 +16,164 @@ layout: home
           <span>{{page.date | date: '%Y, %b %d'}}</span>
         </div>
       </header>
-      {{page.content | markdownify}}
-      <div class="c-article__footer u-clearfix">
-        <div class="c-article__tag">
-          {% for tag in page.tags %}
-          <a href="{{site.baseurl}}/tags#{{tag}}">&#35; {{ tag }}</a>
-          {% endfor %}
+      <div class="c-wrap-content-toc post-article">
+        {% if page.toc %}
+        <div class="toc show">
+          <div id="toc_btn"><img width="16" src="/favicons/icon.svg"></div>
+          <div id="toc_content" class="show">
+            {% include toc.html html=content %}
+          </div>
         </div>
-        <div class="c-article__share">
-          <a href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&url={{ site.url }}{{ page.url }}" title="Share
-          on Twitter" rel="nofollow" target="_blank"><div data-icon='ei-sc-twitter' data-size='s'></div></a>
-          <a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" title="Share on Facebook" rel="nofollow" target="_blank"><div data-icon='ei-sc-facebook' data-size='s'></div></a>
-          <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" title="Share on Google+" rel="nofollow" target="_blank"><div data-icon='ei-sc-google-plus' data-size='s'></div></a>
+        {% endif %}
+        <div class="c-wrap-content-write">
+          {{page.content | markdownify}}
+        </div>
+        <div class="c-article__footer u-clearfix">
+          <div class="c-article__tag">
+            {% for tag in page.tags %}
+            <a href="{{site.baseurl}}/tags#{{tag}}">&#35; {{ tag }}</a>
+            {% endfor %}
+          </div>
+          <div class="c-article__share">
+            <a href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&url={{ site.url }}{{ page.url }}" title="Share on Twitter" rel="nofollow" target="_blank"><div data-icon='ei-sc-twitter' data-size='s'></div></a>
+            <a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" title="Share on Facebook" rel="nofollow" target="_blank"><div data-icon='ei-sc-facebook' data-size='s'></div></a>
+            <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" title="Share on Google+" rel="nofollow" target="_blank"><div data-icon='ei-sc-google-plus' data-size='s'></div></a>
+          </div>
+
+        {% assign cat = page.categories[0] %}
+        {% assign cat_list = site.categories[cat] %}
+        {% for post in cat_list %}
+          {% if post.url == page.url %}
+            {% assign pOffset = forloop.index0 | minus: 1 %}
+            {% assign nOffset = forloop.index0 | plus: 1 %}
+            {% if forloop.first == false %}
+              {% assign next_post = cat_list[pOffset] %}
+            {% endif %}
+            {% if forloop.last == false %}
+              {% assign previous_post = cat_list[nOffset] %}
+            {% endif %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+        {% if previous_post or next_post %}
+          <nav class="pagination">
+            {% if previous_post %}
+              <a href="{{ previous_post.url | relative_url }}" class="pagination--pager" title="이전 글">◀  {{ previous_post.title | markdownify | strip_html | default: "이전 글" }}</a>
+            {% else %}
+              <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_previous | default: "이전 글" }}</a>
+            {% endif %}
+            {% if next_post %}
+              <a href="{{ next_post.url | relative_url }}" class="pagination--pager" title="다음 글">{{ next_post.title | markdownify | strip_html | default: "다음 글" }}  ▶</a>
+            {% else %}
+              <a href="#" class="pagination--pager disabled">{{ site.data.ui-text[site.locale].pagination_next | default: "다음 글" }}</a>
+            {% endif %}
+          </nav>
+        {% endif %}
         </div>
       </div>
+
+      {% if site.newsletter %}
       {% include newsletter.html %}
+      {% endif %}
       <div class="c-recent-post">
         <h4 class="c-recent__title">You might also enjoy</h4>
         <div class="c-recent__box">
-        {% for post in site.related_posts limit:4 %}
-        {% if post.image %}
-          <div class="c-recent__item">
-            <a class="c-recent__image" href="{{ post.url }}" style="background-image: url( {{"/images/" | prepend: site.baseurl | append: post.image}})"></a>
-            <div class="c-recent__footer">
-              <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
-              <div class="c-recent__date">
-                <time datetime="{{ post.date | date_to_xmlschema }}">{{post.date | date: "%B %-d, %Y"}}</time>
+        {% assign maxRelated = 4 %}
+        {% assign minCommonTags =  1 %}
+        {% assign maxRelatedCounter = 0 %}
+
+        {% for post in site.posts %}
+          {% assign sameTagCount = 0 %}
+          {% assign commonTags = '' %}
+
+          {% for tag in post.tags %}
+          {% if post.url != page.url %}
+            {% if page.tags contains tag %}
+              {% assign sameTagCount = sameTagCount | plus: 1 %}
+              {% capture tagmarkup %} <span class="label label-default">{{ tag }}</span> {% endcapture %}
+              {% assign commonTags = commonTags | append: tagmarkup %}
+            {% endif %}
+          {% endif %}
+          {% endfor %}
+
+          {% if sameTagCount >= minCommonTags %}
+
+            {% if post.image %}
+              <div class="c-recent__item">
+                <a class="c-recent__image" href="{{ post.url }}" style="background-image: url( {{"/assets/" | prepend: site.baseurl | append: post.image}})"></a>
+                <div class="c-recent__footer">
+                  <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+                  <div class="c-recent__date">
+                    <time datetime="{{ post.date | date_to_xmlschema }}">{{post.date | date: "%B %-d, %Y"}}</time>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        {% else %}
-        {% endif %}
+            {% else %}
+            {% endif %}
+
+            {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
+            {% if maxRelatedCounter >= maxRelated %}
+              {% break %}
+            {% endif %}
+          {% endif %}
+
         {% endfor %}
+
+        {% comment %} If we didn't get minimum number of posts, fill in with other ones arbitrarily...{% endcomment %}
+        {% if maxRelated > maxRelatedCounter %}
+
+          {% for post in site.posts %}
+
+          {% assign first_dir = post.path | remove_first: "_posts/" | split: "/" | first %}
+          {% if first_dir != 'secret' %}
+
+            {% assign sameTagCount = 0 %}
+            {% assign commonTags = '' %}
+
+            {% for tag in post.tags %}
+            {% if post.url != page.url %}
+              {% if page.tags contains tag %}
+                {% assign sameTagCount = sameTagCount | plus: 1 %}
+                {% capture tagmarkup %} <span class="label label-default">{{ tag }}</span> {% endcapture %}
+                {% assign commonTags = commonTags | append: tagmarkup %}
+              {% endif %}
+            {% endif %}
+            {% endfor %}
+
+            {% if minCommonTags > sameTagCount and post.url != page.url %}
+
+              {% if post.image %}
+                <div class="c-recent__item">
+                  <a class="c-recent__image" href="{{ post.url }}" style="background-image: url( {{"/assets/" | prepend: site.baseurl | append: post.image}})"></a>
+                  <div class="c-recent__footer">
+                    <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+                    <div class="c-recent__date">
+                      <time datetime="{{ post.date | date_to_xmlschema }}">{{post.date | date: "%B %-d, %Y"}}</time>
+                    </div>
+                  </div>
+                </div>
+              {% else %}
+              {% endif %}
+
+              {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
+              {% if maxRelatedCounter >= maxRelated %}
+                {% break %}
+              {% endif %}
+            {% endif %}
+
+          {% endif %}
+          {% endfor %}
+
+
+        {% endif %}
+
         </div>
       </div> <!-- /.c-recent-post -->
-      {% if site.disqus-identifier %}
-        {% include disqus-comments.html %}
+      {% if site.utterances-identifier %}
+        {% include utterances-comments.html %}
       {% endif %}
     </div> <!-- /.c-wrap-content -->
   </div> <!-- /.c-article__content -->
 </article> <!-- /.c-article-page -->
+
+{% include categories.html %}

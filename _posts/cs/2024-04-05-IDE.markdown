@@ -1,0 +1,41 @@
+---
+layout: post
+title: 통합개발환경(IDE)
+image: 202404/interNet.jpeg
+date: 2024-04-05 12:00:00 +1000
+categories: cs
+tags: [통합개발환경, IDE, intergrated_development_environment]
+toc: true
+---
+## 통합개발환경이란?
+<mark>통합개발환경(IDE, Intergrated Development Environment)이란 소프트웨어를 개발, 테스트, 디버깅 및 배포하는 데 사용하는 소프트웨어 애플리케이션</mark>입니다. 통합개발환경이 개발에 필요한 기능들을 종합적으로 제공하는 것이죠. 이를 활용하면 보다 편한 개발이 가능해집니다. python를 사용한 개발을 한다면 Pycharm, Java를 사용하는 개발을 한다면 Eclipse, Spring Tool Suite, IndelliJ 등이 있습니다.
+
+<br>
+
+> Visual Studio는 IDE? 소스 코드 편집기? <br>
+소스 코드 편집기이지만 각종 플러그인을 설치하면 IDE에 준하는 기능을 한다.
+
+<br>
+<hr>
+
+## IDE의 기능
+
+아래는 IDE는 대표적인 기능입니다.
+
+**■ 프로젝트 관리자(Project Manager)** <br>
+프로젝트를 만들고 구성합니다. 이를 통해 여러 파일을 관리하고 프로젝트 구조를 유지하기 쉽게 합니다.
+
+**■ 소스 코드 편집기** <br>
+코드를 작성하고 편집하는 데 사용됩니다. 문법 강조, 자동 완성 및 코드 형식 지원과 같은 기능으로 코드 작성을 돕습니다.
+
+**■ 디버거(Debugger)** <br>
+코드를 실행하고 디버그합니다. 변수 값의 추적, 스택 추적 및 중단점 설정과 같은 기능을 제공하여 코드 오류를 식별하고 수정할 수 있게 합니다.
+
+**■ 빌드 자동화**: 컴파일러(Compiler) 및 인터프리터(Interpreter) <br>
+코드를 실행 가능한 형식으로 변환하거나 해석합니다. IDE는 개발자가 코드를 실행하여 즉시 결과를 확인할 수 있도록 지원합니다.
+
+**■ 버전 관리 시스템 통합(Version Control System Integration)** <br>
+코드의 버전을 관리하여 협업을 용이하게 합니다. 
+
+**■ 플러그인 및 확장 기능(Plugin and Extension)** <br>
+다양한 언어 및 프레임워크에 대한 지원을 확장합니다. 이를 통해 특정 개발 환경에 맞춤 설정을 할 수 있습니다.

@@ -1,0 +1,98 @@
+---
+layout: post
+title: Node.Js
+image: 202404/js.jpeg
+date: 2024-04-06 12:00:00 +1000
+categories: javascript
+tags: [javascript, 자바스크립트, nodeJS, 노드제이에스]
+toc: true
+code: true
+---
+<style>
+    blockquote { width: 85%; margin: auto; }
+</style>
+
+## Node.Js
+[Node.js 깃허브의 소개 문구](https://github.com/nodejs)
+> Node.js® is a free, open-source, cross-platform JavaScript run-time environment—
+that lets developers write command line tools and server-side scripts outside of a browser.
+
+Node.js®는 자유로운 오픈 소스, 크로스 플랫폼 자바스크립트 런타임 환경입니다. <br>
+이는 개발자가 브라우저 외부에서 명령줄 도구와 서버 측 스크립트를 작성할 수 있게 합니다.
+
+[다운로드는 Node.js 홈페이지](https://nodejs.org/en/download)
+- Current는 최신 버전
+- LTS는 안정화 버전 (추천!)
+
+<br>
+
+### Node.Js의 특징
+- Javascript 언어 <br>
+Node.js는 JavaScript 언어를 사용하여 서버측 애플리케이션을 개발할 수 있도록 하는 도구입니다. 즉 프론트엔드와 백엔드를 동일한 언어(Javascript)로 애플리케이션 개발을 할 수 있습니다. 
+<br>
+
+- 비동기식 프로그래밍 <br>
+Node.js는 이벤트 기반 아키텍처를 채택하여 비동기식 프로그래밍을 지원합니다. 이는 여러 요청을 동시에 처리하고, I/O 작업이 완료될 때까지 대기하지 않고 다른 작업을 처리할 수 있습니다.
+<br>
+
+- 단일 스레드 <br>
+Node.js는 단일 스레드 모델을 사용하지만, 이벤트 루프를 통해 동시성을 지원합니다. 이는 멀티 스레드 모델보다 적은 자원을 사용하여 더 높은 성능을 제공합니다.
+<br>
+
+- 모듈 생태계 <br>
+Node.js는 npm(Node Package Manager)을 통해 다양한 모듈을 제공하며, 개발자가 필요한 기능을 쉽게 추가할 수 있습니다. npm은 세계 최대의 오픈 소스 라이브러리 생태계 중 하나입니다.
+<br>
+
+- 높은 성능 <br>
+Node.js는 비동기식 및 이벤트 기반 아키텍처를 통해 높은 성능을 제공합니다. 이는 대규모 실시간 애플리케이션 및 데이터 스트리밍 애플리케이션에 적합합니다.
+<br>
+
+- 크로스 플랫폼 <br>
+Node.js는 Windows, macOS, Linux 등 다양한 플랫폼에서 실행될 수 있으며, 크로스 플랫폼 개발을 지원합니다.
+
+<br>
+
+---
+<br>
+
+## 패키지 매니저
+**npm(Node Package Manager)**은 Node.js 생태계에서 가장 널리 사용되는 패키지 관리 도구입니다. <br>
+npm으로 Node.js 애플리케이션을 개발하는 데 필요한 다양한 패키지를 설치하고 관리할 수 있으며, 간편하게 외부 라이브러리나 모듈을 사용하여 프로젝트를 구축할 수 있습니다.
+
+```shell
+# 패키지 및 의존성을 자동으로 설치
+npm install
+npm i
+# 특정 패키지 및 의존성 설치 (ex, npm install http)
+npm install <package>
+npm i <package>
+```
+<br>
+
+---
+<br>
+
+## 버전 관리자
+**nvm (Node Version Manager)**은 Node.js의 여러 버전을 관리하고 각 프로젝트에 필요한 버전을 선택하여 사용할 수 있도록 하는 도구입니다. 
+
+```shell
+# 현재 node.js 버전 확인
+node -v
+node -version
+nvm current
+# 설치된 node.js 버전 확인
+nvm list
+nvm ls
+# 특정 버전 설치 (ex, nvm install 21.7.3)
+nvm install <version>
+# 특정 버전 삭제 (ex, nvm uninstall 21.7.3)
+nvm uninstall <version>
+# 특정 버전 사용 (ex, nvm use 21.7.3)
+nvm use <version>
+# 가장 최신 버전 사용
+nvm use newest
+# 특정 버전 별칭 설정 (ex, nvm alias defalut 21.7.3)
+nvm alias <name> <version>
+# 지정 버전으로 특정 명령어 실행 (ex, nvm run 21.7.3 node script.js)
+nvm run <version> <command>
+```

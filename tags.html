@@ -6,6 +6,8 @@ permalink: /tags/
 {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
 {% assign tag_words = site_tags | split:',' | sort %}
 
+{% include header.html %}
+
 <header class="c-header u-hide u-no-margin-bottom">
   <div class="c-header__box">
     <div class="c-search u-full-width">
@@ -19,7 +21,7 @@ permalink: /tags/
   </div>
 </header>
 <section class="c-blog-tags o-opacity">
-  <h1>Tags in Blog</h1>
+  <h1>― 태그 모음 ―</h1>
   <ul class="c-tag__list">
   {% for item in (0..site.tags.size) %}{% unless forloop.last %}
     {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}

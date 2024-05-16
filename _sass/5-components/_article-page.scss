@@ -2,19 +2,22 @@
 	ARTICLE PAGE
 =============== */
 
+// Article Container
 .c-article {
   width: 100%;
   margin: 20px 0;
 }
 
+// Content Wrapper
 .c-wrap-content {
   padding: 20px;
-  background-color: $white-color;
+  background-color: var(--postcard-background);
 }
 
+// Article Image
 .c-article__image {
   position: relative;
-  background-color: rgba(220,235,245,0.2);
+  background-color: rgba(220, 235, 245, 0.2);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -25,14 +28,17 @@
   }
 }
 
+// Article Header
 .c-article__header {
   margin-bottom: 20px;
   text-align: center;
   .c-article__title {
+    font-family: 'PyeongChangPeace-Bold';
     margin-bottom: 10px;
   }
 }
 
+// Article Date
 .c-article__date {
   span {
     font-size: 13px;
@@ -41,6 +47,7 @@
   }
 }
 
+// Article Footer
 .c-article__footer {
   margin: 30px 0 0;
   padding-bottom: 30px;
@@ -51,9 +58,10 @@
     a {
       .icon {
         vertical-align: middle;
+        
         transition: $global-transition;
         &:hover {
-          opacity: .7;
+          opacity: 0.7;
           transition: $global-transition;
         }
       }
@@ -66,9 +74,9 @@
       vertical-align: middle;
       padding: 5px 10px;
       font-family: 'Volkhov', 'Times New Roman', Times, serif;
-      font-size: 10px;
       line-height: 10px;
       text-transform: uppercase;
+      border-radius: 25px;
       background-color: rgba(115, 138, 160, 0.60);
       color: $white-color;
       &:hover {
@@ -81,6 +89,7 @@
   }
 }
 
+// Recent Posts Section
 .c-recent-post {
   padding: 30px 0;
   .c-recent__title {
@@ -102,7 +111,7 @@
     overflow: hidden;
     text-align: center;
     background-color: $white-color;
-    box-shadow: 0 1px 1px 0 rgba(31,35,46,0.15);
+    box-shadow: 0 1px 1px 0 rgba(31, 35, 46, 0.15);
     transition: $global-transition;
     h4 {
       margin-bottom: 5px;
@@ -113,7 +122,7 @@
       }
     }
     &:hover {
-      box-shadow: 2px 4px 8px 0px rgba(46,61,73,0.2);
+      box-shadow: 2px 4px 8px 0px rgba(46, 61, 73, 0.2);
     }
   }
   .c-recent__footer {
@@ -123,7 +132,7 @@
     display: block;
     width: 100%;
     min-height: 180px;
-    background-color: rgba(220,235,245,0.2);
+    background-color: rgba(220, 235, 245, 0.2);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -134,6 +143,7 @@
   }
 }
 
+// Responsive Design
 @media only screen and (max-width: 1200px) {
   .c-recent-post {
     .c-recent__item {

@@ -1,0 +1,60 @@
+/* ===============
+	TABLE
+=============== */
+
+html  {
+    --table-border-color: #404040;
+    --table-tr-backgroud: #404040;
+    --table-tr-color: #CBCCCD;
+    --table-backgroud-odd: #ffffff;
+    --table-color-odd: #404040;
+    --table-backgroud-even: #EFEFEF;
+    --table-color-even: #404040;
+}
+
+html[data-theme="dark"]  {
+    --table-border-color: #ccc;
+    --table-tr-backgroud: #404040;
+    --table-tr-color: #CBCCCD;
+    --table-backgroud-odd: #ffffff;
+    --table-color-odd: #CBCCCD;
+    --table-backgroud-even: #454444;
+    --table-color-even: #cac7c7;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    line-height: 1.5;
+    border: 1px solid var(--table-border-color);
+    margin: 20px 10px;
+}
+table thead th {
+    width: auto;
+    padding: 10px;
+    border-top: 1px solid var(--table-border-color);
+    border-bottom: 1px solid var(--table-border-color);
+    font-weight: bold;
+    vertical-align: top;
+    color: var(--table-tr-color);
+    background: var(--table-tr-backgroud);
+    margin: 20px 10px;
+}
+table tbody th {
+    width: auto;
+    padding: 10px;
+}
+table td {
+    width: auto;
+    padding: 10px;
+    vertical-align: center;
+    max-width: 200px;
+}
+table tbody tr:nth-child(odd) {
+    color: var(--table-color-odd);
+    background: var(--postcard-background);
+}
+table tbody tr:nth-child(even) {
+    color: var(--table-color-even);
+    background: var(--table-backgroud-even);
+}

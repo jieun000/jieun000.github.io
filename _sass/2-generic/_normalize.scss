@@ -9,6 +9,13 @@
  *    IE on Windows Phone and in iOS.
  */
 
+/* General styles for mobile */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* HTML specific styles */
 html {
   line-height: 1.15; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
@@ -159,8 +166,9 @@ dfn {
  */
 
 mark {
-  background-color: #ff0;
-  color: #000;
+  background: linear-gradient(to top, var(--markLinear) 50%, transparent 50%);
+  // background-color: #ffd600;
+  color: var(--text-color);
 }
 
 /**

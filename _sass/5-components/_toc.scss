@@ -1,0 +1,75 @@
+/* ===============
+	TOC (Table Of Contents)
+=============== */
+
+.c-wrap-content-write  {
+  width: 100%;
+  @media (max-width: 74em) {
+    width: 100%;
+  }
+}
+
+.toc {
+    display: none;
+    position: absolute;
+    width: 16%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-right: 0.75rem;
+    padding: 0.25rem 0;
+    right: 0;
+    font-size: 0.7rem;
+    border-radius: 25px;
+    transition-delay: 0s;
+    transition: all 0.9s;
+    z-index: 5555;
+    background-color: transparent;
+
+    &.show {
+      background-color: var(--toc-backgroudColor);
+    }
+    
+    #toc_btn {
+        text-align: center;
+        cursor: pointer;
+    }
+
+    @media (max-width: 74em) {
+      top: 0;
+      width: 100%;
+      position: relative;
+      margin: 20px auto;
+      display: block;
+      flex-direction: column; 
+    }
+    @media (min-width: 74.01em) and (max-width: 94.99em) {
+        width: 16%;
+        display: block;
+    }
+    @media (min-width: 95em) {
+        width: 16%;
+        display: block;
+    }
+
+    a.toc-active {
+      font-weight: bold;
+      transition: all 0.125s ease-in 0s;
+      font-size: 0.75rem;
+      color: pink;
+    }
+  
+    ul {
+      list-style-type: none;
+      margin-bottom: 0.1rem;
+      padding-left: 0rem;
+    }
+  
+    a {
+      color: var(--text-color);
+      text-decoration: none;
+    }
+  
+    a:hover {
+      color: royalblue;
+    }
+}

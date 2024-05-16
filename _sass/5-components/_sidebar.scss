@@ -1,40 +1,158 @@
 /* ===============
-	SIDEBAR
+  SIDEBAR
 =============== */
 
+// Sidebar Container
 .c-sidebar {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
-  width: 360px;
-  padding: 40px 20px 20px;
+  width: 300px;
+  padding: 0px 20px 30px;
   text-align: center;
   box-shadow: 1px 1px 0 rgba(31, 35, 46, 0.15);
-  background-color: $white-color;
+  background-image: var(--sidebar);
 }
 
+// Sidebar Hamburger
+.menu-trigger {
+  z-index: 5555;
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  margin: 22.5px;
+  &, span {
+    display: inline-block;
+    transition: all .4s;
+    box-sizing: border-box;
+  }
+  span {
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    height: 4px;
+    background-color: var(--threeBurger);
+    border-radius: 4px;
+    &:nth-of-type(1) {
+      top: 0;
+      transform: translate(-50%, 0);
+      margin: 0;
+    }
+    &:nth-of-type(2) {
+      top: 50%;
+      transform: translate(-50%, -100%);
+    }
+    &:nth-of-type(3) {
+      bottom: 0;
+      transform: translate(-50%, -100%);
+    }
+  }
+  &.active {
+    span:nth-of-type(1) {
+        transform: translate(-50%, 325%) rotate(-45deg);
+        background-color: var(--xBurger);
+    }
+    span:nth-of-type(2) {
+        opacity: 0;
+    }
+    span:nth-of-type(3) {
+        transform: translate(-50%, -325%) rotate(45deg);
+        background-color: var(--xBurger);
+    }
+  }
+}
+
+// Spinner in Sidebar
+.isometric-scene {
+  position: absolute; 
+  width: 100%;
+  height: 225px;
+  left: 50%; 
+  transform: translateX(-50%);
+  clip-path: polygon(0 0, 57% 0, 82% 100%, 0 100%);
+
+  .item {
+    position: absolute;
+    left: calc(50% - var(--item-half-width));
+    top: calc(50% - var(--item-half-height));
+  }
+
+  .outer-land {
+    width: 200px;
+    height: 200px;
+    --item-half-width: 100px;
+    --item-half-height: 100px;
+    border-radius: 50%;
+    border: 2px solid #ffdc73;
+  }
+
+  .one {
+    width: 15px;
+    height: 15px;
+    --item-half-width: 7px;
+    --item-half-height: 7px;
+    border-radius: 50%;
+    border: 1px solid #ffdc73;
+    background-color: transparent;
+    box-shadow: 5px 5px 25px rgba(255, 220, 115, .3);
+  }
+
+  .one-1 { animation: oneCircle-1 15s linear infinite; }
+  .one-2 { animation: oneCircle-2 15s linear infinite; }
+  .one-3 { animation: oneCircle-3 15s linear infinite; }
+  .one-4 { animation: oneCircle-4 15s linear infinite; }
+  .one-5 {
+    width: 8px;
+    height: 8px;
+    --item-half-width: 3px;
+    --item-half-height: 3.6px;
+    animation: oneCircle-3 15s linear infinite;
+  }
+
+  @keyframes oneCircle-1 {
+    0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+  }
+  @keyframes oneCircle-2 {
+    0% { transform: rotate(-80deg) translateX(100px) rotate(-80deg); }
+    100% { transform: rotate(280deg) translateX(100px) rotate(-280deg); }
+  }
+  @keyframes oneCircle-3 {
+    0% { transform: rotate(-150deg) translateX(100px) rotate(-150deg); }
+    100% { transform: rotate(210deg) translateX(100px) rotate(-210deg); }
+  }
+  @keyframes oneCircle-4 {
+    0% { transform: rotate(-280deg) translateX(100px) rotate(-280deg); }
+    100% { transform: rotate(80deg) translateX(100px) rotate(-80deg); }
+  }
+}
+
+// Author Section in Sidebar
 .c-sidebar-author {
+  // Author Cover
   .c-author__cover {
+    position: relative;
     width: 100px;
     height: 100px;
-    margin: 0 auto 10px;
+    margin: 40px auto 10px;
     border-radius: 50%;
     overflow: hidden;
     background-color: $secondary-color;
     img {
       width: 100%;
       height: 100%;
-      border-radius: 50%;
       transition: $global-transition;
       &:hover {
-        transform: scale3d(0.90,0.90,1);
+        transform: scale(3) translate(18%, 32%);
       }
     }
   }
+
+  // Contact Menu
   .c-contact-menu {
     .c-btn {
       min-width: 110px;
@@ -46,6 +164,8 @@
       }
     }
   }
+
+  // Author Information
   .c-author__info {
     font-family: 'Volkhov', serif;
   }
@@ -53,32 +173,55 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 21px;
+    color: white;
   }
   .c-author__job {
     font-size: 12px;
-    color: $gray;
     margin: 5px 0 0;
+    color: white;
   }
-  .c-contact-menu {
-    margin: 30px 0;
-    .c-btn--secondary {
-      margin-right: 10px;
-    }
-  }
+
+  // About Author
   .c-author__about {
     max-width: 400px;
     margin: 0 auto 15px;
     font-size: 13px;
   }
+
+  // Sidebar Menu Links
+  .sidebar-menu {
+    margin-top: 35px;
+    margin-left: 0px;
+    li {
+      font-family: 'Volkhov', serif;
+      list-style-type: none;
+      margin: 5px;
+      a {
+        list-style-type: none;
+        font-size: 15px;
+        color: var(--sidebar-text-color);
+      }
+      &:hover {
+        color: $primary-color;
+        transform: scale(1.2);
+        transition: $global-transition;
+      }
+    }
+  }
 }
 
+// Sidebar Footer Section
 .c-sidebar-footer {
+  color: var(--sidebar-text-color);
+
+  // Social Media Title
   .c-social__title {
     position: relative;
     font-family: 'Volkhov', serif;
     font-size: 15px;
     font-weight: 700;
-    color: $darkest;
+    color: $gray-lighter;
+
     &::before {
       content: "";
       display: block;
@@ -88,8 +231,9 @@
       position: absolute;
       top: 50%;
       left: 0;
-      background-color: $darkest;
+      background-color: $gray-light;
     }
+
     &::after {
       content: "";
       display: block;
@@ -99,22 +243,27 @@
       position: absolute;
       top: 50%;
       right: 0;
-      background-color: $darkest;
+      background-color: $blue-light;
     }
   }
+
+  // Social Media Icons
   .c-social__list {
     list-style-type: none;
     padding: 0;
     margin: 15px 0;
+
     .c-social__item {
       display: inline-block;
       width: 27px;
       height: 27px;
     }
+
     .icon {
-      width: 27px;
-      height: 27px;
-      fill: $darkest;
+      width: 35px;
+      height: 35px;
+      margin: 5px;
+      fill: var(--sidebar-text-color);
       vertical-align: middle;
       transition: $global-transition;
       &:hover {
@@ -124,6 +273,8 @@
       }
     }
   }
+
+  // Copyright Information
   .c-copyright {
     p {
       font-size: 13px;
@@ -132,15 +283,40 @@
   }
 }
 
+// Responsive Design
 @media only screen and (max-width: 900px) {
+  .menu-trigger {
+    display: none;
+  }
+  .isometric-scene {
+    width: 100%;
+    left: 50%; 
+    transform: translateX(-50%);
+    clip-path: polygon(0 0, 50% 0, 65% 100%, 0 100%);
+
+    .one {
+      width: 15px;
+      height: 15px;
+    }
+    .one-5 {
+      width: 10px;
+      height: 10px;
+      --item-half-width: 4px;
+      --item-half-height: 4.5px;
+    }
+  }
+
   .c-sidebar {
     position: relative;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
     padding: 20px;
+
     .c-contact-menu {
       margin: 20px 0;
     }
   }
+
   .c-sidebar-footer {
     .c-social {
       .c-social__title {
@@ -157,7 +333,47 @@
 }
 
 @media only screen and (max-width: 480px) {
+  .isometric-scene {
+    width: 100%;
+    transform: translateX(-48%);
+    clip-path: polygon(0 0, 50% 0, 75% 100%, 0 100%);
+
+    .outer-land {
+      width: 180px;
+      height: 180px;
+
+      .one {
+        width: 10px;
+        height: 10px;
+        
+      }
+      .one-5 {
+        width: 5px;
+        height: 5px;
+        --item-half-width: 4.2px;
+        --item-half-height: 4.2px;
+      }
+
+      @keyframes oneCircle-1 {
+        0% { transform: rotate(0deg) translateX(89px) rotate(0deg); }
+        100% { transform: rotate(360deg) translateX(89px) rotate(-360deg); }
+      }
+      @keyframes oneCircle-2 {
+        0% { transform: rotate(-80deg) translateX(89px) rotate(-80deg); }
+        100% { transform: rotate(280deg) translateX(89px) rotate(-280deg); }
+      }
+      @keyframes oneCircle-3 {
+        0% { transform: rotate(-150deg) translateX(89px) rotate(-150deg); }
+        100% { transform: rotate(210deg) translateX(89px) rotate(-210deg); }
+      }
+      @keyframes oneCircle-4 {
+        0% { transform: rotate(-280deg) translateX(89px) rotate(-280deg); }
+        100% { transform: rotate(80deg) translateX(89px) rotate(-80deg); }
+      }
+    }
+  }
   .c-sidebar-author {
+    // Adjustments for smaller screens
     .c-author__cover {
       width: 80px;
       height: 80px;
@@ -180,6 +396,7 @@
       }
     }
   }
+
   .c-sidebar-footer {
     .c-social {
       .c-social__title {
@@ -189,8 +406,9 @@
     .c-social__list {
       margin: 0;
       .icon {
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
+        margin: 15px;
       }
     }
     .c-copyright {

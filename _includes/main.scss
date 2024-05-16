@@ -27,6 +27,7 @@
 // 4 OBJECTS
 @import '4-objects/wrapper';
 @import '4-objects/animation';
+@import '4-objects/pagination';
 
 // 5 COMPONENTS
 @import '5-components/buttons';
@@ -39,8 +40,11 @@
 @import '5-components/categories';
 @import '5-components/form';
 @import '5-components/newsletter';
-@import '5-components/disqus-comments';
+@import '5-components/utterances-comments';
 @import '5-components/scroll-top';
+@import '5-components/theme';
+@import '5-components/toc';
+@import '5-components/table';
 
 // 6 TRUMPS
 @import '6-trumps/helpers';

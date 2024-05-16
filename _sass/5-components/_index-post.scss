@@ -8,6 +8,7 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
+
 .c-post {
   width: 100%;
   max-width: 100%;
@@ -19,11 +20,11 @@
   border-radius: 10px;
   overflow: hidden;
   transition: $global-transition;
-  background-color: $white-color;
-  box-shadow: 0 1px 1px 0 rgba(31, 35, 46, .15);
+  background-color: var(--postcard-background);
+  box-shadow: var(--postcard-shadow);
   &:hover {
     transform: translate(0px, -2px);
-    box-shadow: 0 15px 45px -10px rgba(10, 16, 34, .2)
+    box-shadow: var(--postcard-hover-shadow);
   }
   .c-post-thumbnail {
     display: block;
@@ -37,14 +38,16 @@
   }
   .c-post-content {
     padding: 15px;
-    width: 70%;
+    // width: 70%;
+    width: 100%;
     .c-post-title {
+      font-family: 'PyeongChangPeace-Bold';
       font-size: 30px;
       font-weight: 400;
       margin: 0 0 15px;
       a {
         text-decoration: none;
-        color: $blue-dark;
+        color: var(--postcard-title);
       }
     }
     .c-post-date,
@@ -80,7 +83,7 @@
     .c-post-content {
       width: 100%;
       .c-post-title {
-        font-size: 21px;
+        font-size: 19px;
         margin: 15px 0;
       }
     }
@@ -95,7 +98,7 @@
     .c-post-content {
       width: 100%;
       .c-post-title {
-        font-size: 21px;
+        font-size: 19px;
         margin: 15px 0;
       }
     }

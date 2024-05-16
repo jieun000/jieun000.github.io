@@ -3,4 +3,59 @@
 <script src="{{site.baseurl}}/js/jquery.fitvids.js"></script>
 <script src="{{site.baseurl}}/js/simple-jekyll-search.min.js"></script>
 <script src="{{site.baseurl}}/js/main.js"></script>
-<!-- /javascripts -->
+<script src="{{site.baseurl}}/js/legendary-cursor.js"></script>
+<script src="{{site.baseurl}}/js/theme.js"></script>
+{% if page.toc %}
+<script src="{{site.baseurl}}/js/toc.js"></script>
+{% endif %}
+{% if page.code %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+<script src="{{site.baseurl}}/js/clipboard.js"></script>
+{% endif %}
+{% if page.math %}
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{% endif %}
+<script>
+$(document).ready(function () {
+  function strip(str, remove) {
+    while (str.length > 0 && remove.indexOf(str.charAt(0)) != -1) {
+      str = str.substr(1);
+    }
+    while (str.length > 0 && remove.indexOf(str.charAt(str.length - 1)) != -1) {
+      str = str.substr(0, str.length - 1);
+    }
+    return str;
+  }
+
+  function scroll() {
+    window.scrollTo({
+      left: 0, 
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+    sessionStorage.removeItem('forceCheckScroll');
+  }
+  const forceCheckScroll = sessionStorage.getItem('forceCheckScroll') === 'true';
+  const checkScroll = strip(window.location.pathname, '/') !== strip('{{ site.baseurl }}', '/');
+  if (forceCheckScroll || checkScroll) {
+    const maxWidth = "(max-width: 48rem)";
+    const result = window.matchMedia(maxWidth);
+    if (result.matches) {
+      scroll();
+    } else {
+      result.addListener((match) => {
+        if (match.media == maxWidth) {
+          if (match.matches) {
+            scroll();
+          }
+        }
+      });
+    }
+  }
+  function handleLinkClick() {
+    sessionStorage.setItem('forceCheckScroll', 'true');
+  }
+  $(".sidebar-menu a").click(handleLinkClick);
+});
+</script>

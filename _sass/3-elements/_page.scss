@@ -6,10 +6,14 @@ body {
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
-  color: $text-color;
-  background-color: $background;
+  color: var(--text-color);
+  background-color: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  cursor: url('/images/cursor.svg'), 
+          url('/images/cursor.svg'), 
+          url('/images/cursor.svg'),
+          auto;
 }
 
 *::selection {

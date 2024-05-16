@@ -4,18 +4,21 @@
 
 .c-top {
   position: fixed;
+  display: none;
   width: 40px;
   height: 40px;
-	bottom: 20px;
+  right: 35px;
+	bottom: 35px;
+  border: 1px solid $gray-lighten;
+  border-radius: 50%;
   color: $gray-dark;
 	cursor: pointer;
 	transition: $global-transition;
-	right: -100px;
-	z-index: 10;
+	z-index: 6666;
   opacity: .5;
 
   &--active {
-    right: 15px;
+    display: block;
   }
 
   &:hover {

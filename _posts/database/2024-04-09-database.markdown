@@ -1,0 +1,22 @@
+---
+layout: post
+title: 데이터 베이스(DB)
+image: 202404/db.jpeg
+date: 2024-04-09 12:00:00 +1000
+categories: database
+tags: [database, 데이터베이스, DB]
+toc: true
+---
+## 데이터베이스란?
+데이터베이스(DB, Database)는 <mark>데이터를 체계적이고 구조적으로 저장, 관리, 검색, 수정 및 삭제할 수 있는 시스템</mark>입니다. 데이터베이스를 사용하면 정보를 효율적으로 조직하고, 여러 사용자나 애플리케이션이 동시에 접근하고 조작할 수 있습니다.
+
+## 데이터베이스의 종류
+■ 관계형 데이터베이스(RDBMS) <br>
+테이블(스키마) 형태로 구조화된 데이터베이스 관리시스템(DBMS) 입니다. 각 테이블은 고유의 키를 설정해 다른 테이블과 관계를 맺을 수 있습니다. 
+- MySQL, PostgreSQL, Oracle, SQL Server 
+
+<br>
+
+■ 비관계형 데이터베이스(NoSQL Database) <br>
+키-값, 도큐먼트, 그래프, 컬럼 패밀리 등의 형태로 데이터를 저장하는 데이터베이스 관리시스템(DBMS)입니다. 스키마가 없거나 유연한 스키마를 가지고 있으며, 대규모 분산 데이터 저장 및 처리에 적합합니다. 
+- MongoDB, Cassandra, Redis, CouchDB

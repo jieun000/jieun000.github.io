@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include head.html %}
-
 <body>
+  <div class="loading-overlay">
+    <div class="loading-bar"></div>
+  </div>
   {% if site.google-analytics %}
     {% include analytics.html %}
   {% endif %}

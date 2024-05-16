@@ -3,14 +3,24 @@
 =============== */
 
 // Body font
-$base-font-size: 15px;
+$base-font-size: 18px;
 $base-font-style: normal;
 $base-font-variant: normal;
 $base-font-weight: normal;
-$base-font-family: 'Open Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
+$base-font-family: 'GowunDodum-Regular';
 $base-line-height: 28px;
-
+// --text-font: Times, "Times New Roman", "Free Serif", "Noto Serif", TimesNewRomanPSMT, "Droid Serif";
+// --code-font: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
 // Headings
-$heading-font-weight: 400;
+$heading-font-weight: bold;
 $heading-font-family: 'Volkhov', 'Times New Roman', Times, serif;
+
+@font-face {
+    font-family: 'GowunBatang-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/GowunBatang-Regular.woff') format('woff');
+}
+@font-face {
+    font-family: 'PyeongChangPeace-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+}

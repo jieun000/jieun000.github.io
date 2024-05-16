@@ -2,17 +2,34 @@
 	CODE
 =============== */
 
+.code-name {
+  font-family: 'Volkhov', 'Times New Roman', Times, serif;
+  font-size: 15px;
+  font-weight: bold;
+}
+
 code {
   overflow: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
   word-break: break-all;
-  font-family: Courier, monospace;
-  font-size: 14px;
-  background-color: #f7f7f7;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 15px;
 }
 
 p code,
 li code {
   padding: 3px 5px;
+}
+
+@media only screen and (max-width: 900px) {
+  code {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  code {
+    font-size: 12px;
+  }
 }

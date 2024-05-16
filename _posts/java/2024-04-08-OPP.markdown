@@ -1,0 +1,108 @@
+---
+layout: post
+title: 객체 지향 프로그래밍(OPP)
+image: 202404/java.jpeg
+date: 2024-04-08 12:00:00 +1000
+categories: java
+tags: [java, 자바, 객체지향프로그래밍, opp]
+toc: true
+code: true
+---
+## 객체 지향 프로그래밍
+객체 지향 프로그래밍(Object-Oriented Programming, OOP)은 <mark>소프트웨어 개발 방법론</mark> 중 하나입니다. <br>
+OOP는 현실 세계의 객체(Object)를 모델링하여 프로그램을 구성합니다.
+
+<br>
+
+### OOP의 주요 특징 4가지.
+- #### 캡슐화
+캡슐화(Encapsulation)는 객체의 상태와 행위를 하나로 묶고 외부에서 접근을 제어하는 것을 의미합니다. <br>
+캡슐화를 통해 데이터를 보호하고 객체 간의 상호 작용을 추상화할 수 있습니다.
+
+```java
+public class ClassName {
+    private String name;
+    private int age;
+
+    // getter 메서드
+    public String getName() {
+        return name;
+    }
+
+    // setter 메서드
+    public void setName(String name) {
+        this.name = name;
+    }
+}
+```
+
+<br>
+
+- #### 상속
+상속(Inheritance)은 클래스가 다른 클래스의 특성(속성과 메서드)을 상속받아 사용하는 것을 말합니다. <br>
+상속을 통해 코드 재사용성이 높아지고 클래스 간의 계층 구조가 형성됩니다.
+
+```java
+// 상위 클래스
+public class UpperClass {
+    void first() {
+        System.out.println("in Upper...");
+    }
+}
+
+// 하위 클래스
+public class LowerClass extends UpperClass {
+    void first_sub() {
+        System.out.println("this is Lower Class");
+    }
+}
+```
+
+<br>
+
+- #### 다형성
+다형성(Polymorphism)은 같은 이름의 메서드가 다른 클래스에서 다르게 구현될 수 있는 능력을 의미합니다. <br>
+다형성을 통해 동일한 인터페이스를 가진 객체들이 서로 다르게 반응하거나 동작할 수 있습니다.
+
+```java
+// 메서드 오버로딩
+public class Calculator {
+    int add(int x, int y) {
+        return x + y;
+    }
+    double add(double x, double y) {
+        return x + y;
+    }
+}
+
+// 메서드 오버라이딩
+public class OverRiding {
+    void whatMethod() {
+        System.out.println("Where?");
+    }
+}
+public class Ridings extends OverRiding {
+    @Override
+    void whatMethod() {
+        System.out.println("It's printed out.");
+    }
+}
+```
+
+<br>
+
+- #### 추상화
+추상화(Abstraction)는 복잡한 현실 세계를 단순화하여 필요한 부분에만 집중하는 것을 의미합니다. <br>
+추상화를 통해 공통된 속성과 동작을 추출하여 클래스로 정의할 수 있습니다.
+
+```java
+// 추상 클래스
+abstract class Shape {
+    abstract void draw();
+}
+
+// 인터페이스
+interface Drawable {
+    void draw();
+}
+```

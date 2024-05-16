@@ -15,7 +15,7 @@ layout: home
   {% for post in site.posts limit:site.paginate offset:offset %}
   <article class="c-post">
     {% if post.image %}
-    <a class="c-post-thumbnail o-opacity" style="background-image: url({{"/images/" | prepend: site.baseurl | append : post.image}})"
+    <a class="c-post-thumbnail o-opacity" style="background-image: url({{"/assets/" | prepend: site.baseurl | append : post.image}})"
         href="{{post.url | prepend: site.baseurl}}"></a>
     {% else %} {% endif %}
     <div class="c-post-content">
@@ -29,11 +29,7 @@ layout: home
     </div>
   </article> <!-- /.c-post -->
   {% endfor %}
+  {% include paginator.html %}
 </div> <!-- /.c-posts -->
 
-{% assign postCount = site.posts | size %}
-{% assign postsCovered = site.paginate | plus:offset %}
-{% if postsCovered < postCount %}
-  <button class="c-load-more c-btn c-btn--middle">Load more posts</button>
-{% endif %}
 {% include categories.html %}
