@@ -1,0 +1,55 @@
+---
+layout: post
+title: 프로그래머스 Lv.0 【 8번 문자열 돌리기 】
+image: programmers/logo_0.jpg
+date: 2024-04-18 12:00:00 +1000
+tags: [프로그래머스, programmers, 알고리즘, algorithm, Lv0]
+categories: coding-test
+code: true
+---
+<figure style="width: 50%; text-align: center;">
+    <img src="/assets/programmers/programmers008.jpg">
+    <figcaption><a href="https://school.programmers.co.kr/learn/courses/30/lessons/181945">출처: 프로그래머스</a></figcaption>
+</figure>
+
+<br>
+
+```python
+str = input()
+for i in str:
+    print(i)
+```
+
+```ruby
+str = gets.chomp
+puts str.split("")
+```
+
+```java
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        for(int i=0; i<str.length(); i++) System.out.println(str.substring(i, i+1));
+    }
+}
+```
+
+```javascript
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+let input = [];
+
+rl.on('line', function (line) {
+    input = [line];
+}).on('close',function(){
+    str = input[0];
+    [...str].forEach(i =console.log(i));
+});
+```

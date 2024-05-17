@@ -1,0 +1,58 @@
+---
+layout: post
+title: 프로그래머스 Lv.0 【 3번 문자열 반복해서 출력하기 】
+image: programmers/logo_0.jpg
+date: 2024-04-13 12:00:00 +1000
+tags: [프로그래머스, programmers, 알고리즘, algorithm, Lv0]
+categories: coding-test
+code: true
+---
+<figure style="width: 50%; text-align: center;">
+    <img src="/assets/programmers/programmers003.jpg">
+    <figcaption><a href="https://school.programmers.co.kr/learn/courses/30/lessons/181950">출처: 프로그래머스</a></figcaption>
+</figure>
+
+<br>
+
+```python
+s, n = input().strip().split(' ')
+n = int(n)
+print(s*n)
+```
+
+```ruby
+s, n = gets.chomp.split(' ')
+n = n.to_i
+print(s*n)
+```
+
+```java
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        int n = sc.nextInt();
+        System.out.print(str.repeat(n));
+    }
+}
+```
+
+```javascript
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+let input = [];
+
+rl.on('line', function (line) {
+    input = line.split(' ');
+}).on('close', function () {
+    str = input[0];
+    n = Number(input[1]);
+    console.log(str.repeat(n));
+});
+```

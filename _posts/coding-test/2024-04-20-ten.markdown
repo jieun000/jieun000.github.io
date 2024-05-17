@@ -1,0 +1,47 @@
+---
+layout: post
+title: 프로그래머스 Lv.0 【 10번 문자열 겹쳐쓰기 】
+image: programmers/logo_0.jpg
+date: 2024-04-20 12:00:00 +1000
+tags: [프로그래머스, programmers, 알고리즘, algorithm, Lv0]
+categories: coding-test
+code: true
+---
+<figure style="width: 50%; text-align: center;">
+    <img src="/assets/programmers/programmers010.jpg">
+    <figcaption><a href="https://school.programmers.co.kr/learn/courses/30/lessons/181952">출처: 프로그래머스</a></figcaption>
+</figure>
+
+<br>
+
+```python
+def solution(my_string, overwrite_string, s):
+    answer = my_string[:s] + overwrite_string + my_string[s+len(overwrite_string):]
+    return answer
+```
+
+```ruby
+def solution(my_string, overwrite_string, s)
+    answer = "#{my_string[0, s]}#{overwrite_string}#{my_string[s + overwrite_string.length..]}"
+    return answer
+end
+```
+
+```java
+class Solution {
+    public String solution(String my_string, String overwrite_string, int s) {
+        String answer = my_string.substring(0, s) + overwrite_string;
+        if(my_string.length() answer.length()) {
+            answer += my_string.substring(answer.length());
+        }
+        return answer;
+    }
+}
+```
+
+```javascript
+function solution(my_string, overwrite_string, s) {
+    var answer = my_string.slice(0, s) + overwrite_string + my_string.slice(s+overwrite_string.length, my_string.length);
+    return answer;
+}
+```

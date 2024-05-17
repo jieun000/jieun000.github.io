@@ -1,0 +1,55 @@
+---
+layout: post
+title: 프로그래머스 Lv.0 【 7번 문자열 붙여서 출력하기 】
+image: programmers/logo_0.jpg
+date: 2024-04-17 12:00:00 +1000
+tags: [프로그래머스, programmers, 알고리즘, algorithm, Lv0]
+categories: coding-test
+code: true
+---
+<figure style="width: 50%; text-align: center;">
+    <img src="/assets/programmers/programmers007.jpg">
+    <figcaption><a href="https://school.programmers.co.kr/learn/courses/30/lessons/181946">출처: 프로그래머스</a></figcaption>
+</figure>
+
+<br>
+
+```python
+print(str1+str2)
+```
+
+```ruby
+str1, str2 = gets.chomp.split(' ')
+print str1, str2
+```
+
+```java
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str1 = sc.next();
+        String str2 = sc.next();
+        System.out.print(a + b);
+    }
+}
+```
+
+```javascript
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+let input = [];
+
+rl.on('line', function (line) {
+    input = line.split(' ');
+}).on('close', function () {
+    str1 = input[0];
+    str2 = input[1];
+    console.log(str1 + str2)
+});
+```

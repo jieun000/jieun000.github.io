@@ -1,0 +1,54 @@
+---
+layout: post
+title: 프로그래머스 Lv.0 【 6번 덧셈식 출력하기 】
+image: programmers/logo_0.jpg
+date: 2024-04-16 12:00:00 +1000
+tags: [프로그래머스, programmers, 알고리즘, algorithm, Lv0]
+categories: coding-test
+code: true
+---
+<figure style="width: 50%; text-align: center;">
+    <img src="/assets/programmers/programmers006.jpg">
+    <figcaption><a href="https://school.programmers.co.kr/learn/courses/30/lessons/181947">출처: 프로그래머스</a></figcaption>
+</figure>
+
+<br>
+
+```python
+a, b = map(int, input().strip().split(' '))
+print("%d + %d = %d" %(a,b,a+b))
+```
+
+```ruby
+a, b = gets.chomp.split(' ').map(&:to_i)
+puts "#{a} + #{b} = #{a+b}"
+```
+
+```java
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        System.out.println(a + " + " + b + " = " + (a+b));
+    }
+}
+```
+
+```javascript
+const readline = require('readline');
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+let input = [];
+
+rl.on('line', function (line) {
+    input = line.split(' ');
+}).on('close', function () {
+    console.log(`${input[0]} + ${input[1]} = ${Number(input[0]) + Number(input[1])}`)
+});
+```
