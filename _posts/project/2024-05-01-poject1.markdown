@@ -1,0 +1,22 @@
+---
+layout: post
+title: 코로나19 국내외 재감염율 웹 개발 【 팀 Fi:ding 】
+image: 202405/pj1.gif
+date: 2024-05-01 10:23:20 +0200
+tags: [project, 프로젝트, 
+python, pycharm, mySQL, 
+html, css, javaScript, jQuery, 
+git, sourceTree]
+category: project
+toc: true
+---
+## 이 프로젝트는
+국내외 코로나 감염자, 사망자, 백신 접종자 수 데이터를 수집하여 국가 간 비교를 그래프로 시각화하는 웹 사이트입니다. 사용자가 각국의 코로나 현황을 직관적으로 파악할 수 있도록 돕습니다.
+
+<br>
+
+## 사용 기술
+프론트엔드: HTML, CSS, JavaScript, jQuery <br>
+백엔드: Python, Pycharm Framework <br>
+데이터베이스: MySQL <br>
+형상관리: Git, Github, SourceTree

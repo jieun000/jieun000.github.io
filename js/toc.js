@@ -44,8 +44,8 @@ document.addEventListener('scroll', function(e) {
   if (articleY_bottom >= window.scrollY && window.scrollY >= articleY_top) {
     if (!mq.matches) {
       var parentWidth = document.querySelector('.c-content').getBoundingClientRect().width;
-      var tocWidth = (parentWidth * 16) / 100; 
-      toc.style.cssText = "position: fixed; top: 60px; width: " + tocWidth + "px; transition: width 0s;";
+      var tocWidth = (parentWidth * 16) / 100;
+      toc.style.cssText = "transition: width 0s, top 5s; position: fixed; top: 150px; width: " + tocWidth + "px;";
     } else {
       toc.style.cssText = "";
     }
