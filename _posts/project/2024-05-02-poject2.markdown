@@ -1,0 +1,22 @@
+---
+layout: post
+title: API를 활용한 서울 관광지 소개 웹 개발 【 팀 Fi:ding 】
+image: 202405/pj2.gif
+date: 2024-05-02 10:23:20 +0200
+tags: [project, 프로젝트, 
+java, spring, mySQL,
+html, css, javaScript, jQuery, 
+git, sourceTree]
+category: project
+toc: true
+---
+## 이 프로젝트 
+API를 적극 활용하여 서울의 관광지 정보, 회원 리뷰와 바로 번역 기능 등을 제공하고, 기본 로그인 및 소셜 로그인을 통해 사용자가 좋아요, 즐겨찾기 기능을 이용할 수 있는 웹 사이트입니다.
+
+<br>
+
+## 사용 기술
+프론트엔드: JSP, HTML, CSS, JavaScript, jQuery <br>
+백엔드: Java, Spring Framework <br>
+데이터베이스: MySQL <br>
+형상관리: Git, Github, SourceTree

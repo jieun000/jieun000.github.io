@@ -1,0 +1,20 @@
+---
+layout: post
+title: (this) 깃 블로그
+image: 202405/pj4.png
+date: 2024-05-04 10:23:20 +0200
+tags: [project, 프로젝트, 
+html, scss, javaScript, jQuery, jekyll]
+category: project
+toc: true
+---
+## 이 프로젝트는 
+버전 관리 시스템을 활용하여 구축한 개인 블로그 플랫폼입니다. 
+Jekyll을 이용하여 정적 웹사이트를 생성하고, GitHub Pages를 통해 배포했습니다.
+
+<br>
+
+## 사용 기술
+프론트엔드: HTML, SCSS, JavaScript, jQuery <br>
+백엔드: Jekyll <br>
+형상관리: Git, Github

@@ -1,0 +1,21 @@
+---
+layout: post
+title: The Spring board
+image: 202405/pj5.gif
+date: 2024-05-05 10:23:20 +0200
+tags: [project, 프로젝트, 
+java, spring boot, H2, postpreSQL, 
+thymeScript]
+category: project
+toc: true
+---
+## 이 프로젝트는 
+스프링 부트를 기반으로 구축한 간결하고 효율적인 게시판 웹 애플리케이션입니다. Ubuntu를 통한 AWS 서버 배포까지 진행하였습니다.
+
+<br>
+
+## 사용 기술
+프론트엔드: HTML, CSS, JavaScript, Thymeleaf <br>
+백엔드: Java, Spring Boot <br>
+데이터베이스: H2, PostgreSQL <br>
+형상관리: Git, GitHub
