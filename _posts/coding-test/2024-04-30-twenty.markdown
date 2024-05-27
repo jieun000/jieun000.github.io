@@ -1,0 +1,44 @@
+---
+layout: post
+title: 프로그래머스 Lv.0 【 20번 flag에 따라 다른 값 반환하기 】
+image: programmers/logo_0.jpg
+date: 2024-04-30 12:00:00 +1000
+tags: [프로그래머스, programmers, 알고리즘, algorithm, Lv0]
+categories: coding-test
+code: true
+---
+<figure style="width: 50%; text-align: center;">
+    <img src="/assets/programmers/programmers020.jpg">
+    <figcaption><a href="https://school.programmers.co.kr/learn/courses/30/lessons/181933">출처: 프로그래머스</a></figcaption>
+</figure>
+
+<br>
+
+```python
+def solution(a, b, flag):
+    answer = a + b if flag else a - b
+    return answer
+```
+
+```ruby
+def solution(a, b, flag)
+    answer = flag ? a + b : a - b
+end
+```
+
+```java
+class Solution {
+    public int solution(int a, int b, boolean flag) {
+        int answer = a-b;
+        if(flag==true) answer = a+b;
+        return answer;
+    }
+}
+```
+
+```javascript
+function solution(a, b, flag) {
+    var answer = flag ? a+b : a-b;
+    return answer;
+}
+```

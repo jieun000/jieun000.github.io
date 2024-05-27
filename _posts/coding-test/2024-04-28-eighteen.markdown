@@ -1,0 +1,51 @@
+---
+layout: post
+title: 프로그래머스 Lv.0 【 18번 홀짝에 따라 다른 값 반환하기 】
+image: programmers/logo_0.jpg
+date: 2024-04-28 12:00:00 +1000
+tags: [프로그래머스, programmers, 알고리즘, algorithm, Lv0]
+categories: coding-test
+code: true
+---
+<figure style="width: 50%; text-align: center;">
+    <img src="/assets/programmers/programmers018.jpg">
+    <figcaption><a href="https://school.programmers.co.kr/learn/courses/30/lessons/181935">출처: 프로그래머스</a></figcaption>
+</figure>
+
+<br>
+
+```python
+def solution(n):
+    if n%2==1: 
+        answer = sum(range(1 ,n+1, 2))
+        return answer
+    answer = sum([i*i for i in range(2, n+1, 2)])
+    return answer
+```
+
+```ruby
+def solution(n)
+    return (1..n).step(2).sum if n.odd?
+    (2..n).step(2).sum{|i| i*i}
+end
+```
+
+```java
+class Solution {
+    public int solution(int n) {
+        int answer = 0;
+        if(n%2==1) for(int i=1; i<=n; i+=2) answer += i;
+        else for(int i=2; i<=n; i+=2) answer += i*i;
+        return answer;
+    }
+}
+```
+
+```javascript
+function solution(n) {
+    var answer = 0;
+    if(n%2==1) for(var i=1; i<=n; i+=2) answer += i;
+    else for(var i=2; i<=n; i+=2) answer += i*i;
+    return answer;
+}
+```

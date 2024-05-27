@@ -1,0 +1,45 @@
+---
+layout: post
+title: 프로그래머스 Lv.0 【 12번 문자 리스트를 문자열로 변환하기 】
+image: programmers/logo_0.jpg
+date: 2024-04-22 12:00:00 +1000
+tags: [프로그래머스, programmers, 알고리즘, algorithm, Lv0]
+categories: coding-test
+code: true
+---
+<figure style="width: 50%; text-align: center;">
+    <img src="/assets/programmers/programmers012.jpg">
+    <figcaption><a href="https://school.programmers.co.kr/learn/courses/30/lessons/181941">출처: 프로그래머스</a></figcaption>
+</figure>
+
+<br>
+
+```python
+def solution(arr):
+    answer = ''.join(arr)
+    return answer
+```
+
+```ruby
+def solution(arr)
+    answer = arr.join('')
+    return answer
+end
+```
+
+```java
+class Solution {
+    public String solution(String[] arr) {
+        String answer = String.join("", arr);
+        return answer;
+    }
+}
+```
+
+```javascript
+function solution(arr) {
+    var answer = '';
+    answer = arr.join("")
+    return answer;
+}
+```

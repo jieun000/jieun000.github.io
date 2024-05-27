@@ -1,0 +1,43 @@
+---
+layout: post
+title: 프로그래머스 Lv.0 【 16번 n의 배수 】
+image: programmers/logo_0.jpg
+date: 2024-04-26 12:00:00 +1000
+tags: [프로그래머스, programmers, 알고리즘, algorithm, Lv0]
+categories: coding-test
+code: true
+---
+<figure style="width: 50%; text-align: center;">
+    <img src="/assets/programmers/programmers016.jpg">
+    <figcaption><a href="https://school.programmers.co.kr/learn/courses/30/lessons/181937">출처: 프로그래머스</a></figcaption>
+</figure>
+
+<br>
+
+```python
+def solution(num, n):
+    answer = int(num%n == 0)
+    return answer
+```
+
+```ruby
+def solution(num, n)
+    answer = num%n==0 ? 1:0
+end
+```
+
+```java
+class Solution {
+    public int solution(int num, int n) {
+        int answer = num%n==0 ? 1 : 0;
+        return answer;
+    }
+}
+```
+
+```javascript
+function solution(num, n) {
+    var answer = Number(num%n==0)
+    return answer;
+}
+```

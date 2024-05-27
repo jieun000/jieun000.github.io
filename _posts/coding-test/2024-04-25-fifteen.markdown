@@ -1,0 +1,43 @@
+---
+layout: post
+title: 프로그래머스 Lv.0 【 15번 두 수의 연산값 비교하기 】
+image: programmers/logo_0.jpg
+date: 2024-04-25 12:00:00 +1000
+tags: [프로그래머스, programmers, 알고리즘, algorithm, Lv0]
+categories: coding-test
+code: true
+---
+<figure style="width: 50%; text-align: center;">
+    <img src="/assets/programmers/programmers015.jpg">
+    <figcaption><a href="https://school.programmers.co.kr/learn/courses/30/lessons/181938">출처: 프로그래머스</a></figcaption>
+</figure>
+
+<br>
+
+```python
+def solution(a, b):
+    answer = max(int(f'{a}{b}'), 2*a*b)
+    return answer
+```
+
+```ruby
+def solution(a, b)
+    answer = [[a, b].join('').to_i, 2 * a * b].max
+end
+```
+
+```java
+class Solution {
+    public int solution(int a, int b) {
+        int answer = Math.max(Integer.parseInt(String.valueOf(a) + String.valueOf(b)), 2*a*b);
+        return answer;
+    }
+}
+```
+
+```javascript
+function solution(a, b) {
+    var answer = Math.max(String(a)+b, 2*a*b);
+    return answer;
+}
+```

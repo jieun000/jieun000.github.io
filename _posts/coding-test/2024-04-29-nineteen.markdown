@@ -1,0 +1,59 @@
+---
+layout: post
+title: 프로그래머스 Lv.0 【 19번 조건 문자열 】
+image: programmers/logo_0.jpg
+date: 2024-04-29 12:00:00 +1000
+tags: [프로그래머스, programmers, 알고리즘, algorithm, Lv0]
+categories: coding-test
+code: true
+---
+<figure style="width: 50%; text-align: center;">
+    <img src="/assets/programmers/programmers019.jpg">
+    <figcaption><a href="https://school.programmers.co.kr/learn/courses/30/lessons/181934">출처: 프로그래머스</a></figcaption>
+</figure>
+
+<br>
+
+```python
+def solution(ineq, eq, n, m):
+    if eq=='!': eq = ''
+    answer = int(eval(f'{n}{ineq}{eq}{m}'))
+    return answer
+```
+
+```ruby
+def solution(ineq, eq, n, m)
+    eq = '' if eq == '!'
+    answer = eval("#{n}#{ineq}#{eq}#{m}") ? 1:0
+end
+```
+
+```java
+class Solution {
+    public int solution(String ineq, String eq, int n, int m) {
+    int answer = 0;
+    if(ineq.equals('>')) {
+        if(eq.equals('=')) answer = n>=m ? 1:0;
+        }
+    if(ineq.equals('<')) {
+        if(eq.equals('=')) answer = n>m ? 1:0;
+        }
+    else if(ineq.equals('<')) {
+        if(eq.equals('=')) answer = n<=m ? 1:0;
+        }
+    if(ineq.equals('<')) {
+        if(eq.equals('=')) answer = n<m ? 1:0;
+        }
+    return answer;
+    }
+}
+```
+
+```javascript
+function solution(ineq, eq, n, m) {
+    var answer = 0;
+    if(eq=='!') eq = '';
+    answer = Number(eval(`${n}${ineq}${eq}${m}`))
+    return answer;
+}
+```

@@ -1,0 +1,47 @@
+---
+layout: post
+title: 프로그래머스 Lv.0 【 14번 더 크게 합치기 】
+image: programmers/logo_0.jpg
+date: 2024-04-24 12:00:00 +1000
+tags: [프로그래머스, programmers, 알고리즘, algorithm, Lv0]
+categories: coding-test
+code: true
+---
+<figure style="width: 50%; text-align: center;">
+    <img src="/assets/programmers/programmers014.jpg">
+    <figcaption><a href="https://school.programmers.co.kr/learn/courses/30/lessons/181939">출처: 프로그래머스</a></figcaption>
+</figure>
+
+<br>
+
+```python
+def solution(a, b):
+    answer = int(max(f'{a}{b}', f'{b}{a}'))
+    return answer
+```
+
+```ruby
+def solution(a, b)
+    # [[a, b].join, [b, a].join].max.to_i
+    answer = [a.to_s + b.to_s, b.to_s + a.to_s].max.to_i
+end
+```
+
+```java
+class Solution {
+    public int solution(int a, int b) {
+        int answer = 0;
+        int ab = Integer.parseInt(String.valueOf(a) + b);
+        int ba = Integer.parseInt(String.valueOf(b) + a);
+        answer = ab ba ? ab : ba;
+        return answer;
+    }
+}
+```
+
+```javascript
+function solution(a, b) {
+    var answer = Math.max(Number(`${a}${b}`), Number(`${b}${a}`));
+    return answer
+}
+```
