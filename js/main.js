@@ -163,7 +163,7 @@ $(document).ready(function () {
   
     var content = document.querySelector('.c-content');
     content.style.transition = 'margin-left 0.5s';
-    content.style.marginLeft = isActive ? '4rem' : '300px';
+    content.style.marginLeft = isActive ? '4rem' : '360px';
   });
   
 });
