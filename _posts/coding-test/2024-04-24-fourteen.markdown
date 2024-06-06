@@ -22,8 +22,7 @@ def solution(a, b):
 
 ```ruby
 def solution(a, b)
-    # [[a, b].join, [b, a].join].max.to_i
-    answer = [a.to_s + b.to_s, b.to_s + a.to_s].max.to_i
+    answer = [[a, b].join, [b, a].join].max.to_i
 end
 ```
 

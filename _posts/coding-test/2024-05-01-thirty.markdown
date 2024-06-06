@@ -1,0 +1,55 @@
+---
+layout: post
+title: 프로그래머스 Lv.0 【 21번 코드 처리하기 】
+image: programmers/logo_0.jpg
+date: 2024-05-01 12:00:00 +1000
+tags: [프로그래머스, programmers, 알고리즘, algorithm, Lv0]
+categories: coding-test
+code: true
+---
+<figure style="width: 50%; text-align: center;">
+    <img src="/assets/programmers/programmers021.jpg">
+    <figcaption><a href="https://school.programmers.co.kr/learn/courses/30/lessons/181932">출처: 프로그래머스</a></figcaption>
+</figure>
+
+<br>
+
+```python
+def solution(code):
+    ret = ''.join(code.split('1'))[::2] or 'EMPTY'
+    return ret
+```
+
+```ruby
+def solution(code)
+    ret = code.split('1').join.chars.select.with_index { |_, i| i.even? }.join
+    ret.empty? ? 'EMPTY' : ret
+end
+```
+
+```java
+class Solution {
+    public String solution(String code) {
+        StringBuilder ret = new StringBuilder();
+        int mode = 0;
+        for (int i = 0; i < code.length(); i++) {
+            char code_toC = code.charAt(i);
+            if (code_toC == '1') {
+                mode = mode == 0 ? 1 : 0;
+                continue;
+            }
+            if (i % 2 == mode) {
+                ret.append(code_toC);
+            }
+        }
+        return ret.length() == 0 ? "EMPTY" : ret.toString();
+    }
+}
+```
+
+```javascript
+function solution(code) {
+    var ret = code.replaceAll("1", "").split("").filter((_, i)=i%2 == 0).join("") || "EMPTY";
+    return ret;
+}
+```
