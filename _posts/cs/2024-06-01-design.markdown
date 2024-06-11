@@ -1,0 +1,37 @@
+---
+layout: post
+title: 디자인 패턴
+image: 202406/design.jpg
+date: 2024-06-01 12:00:00 +1000
+categories: cs
+tags: [디자인 패턴, Design Pattern, MVC 패턴]
+toc: true
+code: true
+---
+## 디자인 패턴이란?
+주로 객체 지향 프로그래밍 설계를 할 때 자주 발생하는 문제들을 피하기 위해 사용되는 패턴입니다.
+협업을 하는 개발자들이 모두 자기나름의 방식대로 일을 하면 이후 충돌이 생기기 쉽습니다. 그렇기에 최소한의 의사소통 수단으로서 몇 가지 효율적인 패턴을 기반으로 협업을 해나가는 것입니다. 
+
+즉, 디자인 패턴(Design Pattern)은 소프트웨어 설계 시 **자주 발생하는 문제들을 해결하기 위해 몇 가지 모범적인 해결 방법**을 정리한 것입니다. 이러한 패턴들은 이 패턴들은 <u>재사용 · 효율성 · 코드의 가독성 · 유지보수성</u>에 도움을 줍니다.
+
+<br>
+
+## 디자인 패턴의 종류
+
+### - 생성 패턴
+생성 패턴(Creational Patterns)은 객체 생성 메커니즘을 제공하여 객체 생성의 복잡성을 줄이고, 시스템을 더 유연하게 만듭니다.
+- 싱글톤 패턴(Singleton), 팩토리 패턴(Factory Method), 추상 팩토리 패턴(Abstract Factory), 빌더 패턴(Builder), 프로토타입 패턴(Prototype)
+
+### - 구조 패턴
+구조 패턴(Structural Patterns)은 클래스나 객체를 조합해 더 큰 구조를 형성함으로써 효율적인 디자인을 만들 수 있게 합니다.
+- 어댑터 패턴(Adapter), 브리지 패턴(Bridge), 컴포지트 패턴(Composite), 데코레이터 패턴(Decorator), 퍼사드 패턴(Facade), 플라이웨이트 패턴(Flyweight), 프록시 패턴(Proxy)
+
+### - 행위 패턴
+행위 패턴(Behavioral Patterns)은 객체 간의 책임 분배와 상호작용을 제안해 커뮤니케이션과 데이터 흐름을 원활하게 합니다.
+- 옵저버 패턴(Observer), 스트래티지 패턴(Strategy), 템플릿 메서드 패턴(Template Method), 커맨드 패턴(Command), 상태 패턴(State), 방문자 패턴(Visitor), 체인 오브 리스폰서빌리티 패턴(Chain of Responsibility), 미디에이터 패턴(Mediator), 메멘토 패턴(Memento), 인터프리터 패턴(Interpreter), 이터레이터 패턴(Iterator)
+
+<br>
+
+> 전통적인 디자인 패턴의 예시에는 포함되지 않지만 더 넓은 범위의 애플리케이션 구조 전체를 설계하는 데 중점을 두는 MVC 패턴 등도 있습니다.
+
+[ 디자인 패턴을 공부하기에 좋은 추천 사이트입니다:) ](https://refactoring.guru/ko/design-patterns)

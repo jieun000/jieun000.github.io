@@ -4,7 +4,7 @@ title: Node.Js
 image: 202404/js.jpeg
 date: 2024-04-06 12:00:00 +1000
 categories: javascript
-tags: [javascript, 자바스크립트, nodeJS, 노드제이에스]
+tags: [javascript, 자바스크립트, NodeJS, 노드제이에스, npm, 패키지매니저, nvm, 버전관리자]
 toc: true
 code: true
 ---
@@ -66,6 +66,22 @@ npm i
 # 특정 패키지 및 의존성 설치 (ex, npm install http)
 npm install <package>
 npm i <package>
+# 패키지 업데이트
+npm update <package>
+npm up
+npm upgrade
+# 설치한 패키지 확인
+npm ls
+npm list
+npm la
+npm ll
+# 패키지 삭제
+npm uninstall <package>
+npm remove <package>
+npm rm <package>
+npm r <package>
+npm un <package>
+npm unlink <package>
 ```
 <br>
 

@@ -1,0 +1,44 @@
+---
+layout: post
+title: The nodeJS board
+image: 202405/pj6.gif
+date: 2024-05-08 10:23:20 +0200
+tags: [project, 프로젝트, 
+nodeJS, express, mongoDB, 
+handlebar, css, javaScript, jQuery,
+git, github]
+category: project
+toc: true
+---
+## 이 프로젝트는 
+Node.js를 활용하여 구축한 간결하고 효율적인 게시판 웹 애플리케이션입니다. 본 프로젝트는 Node.js를 학습하기 위한 목적으로 구현하였습니다. 도서 『node.js 백엔드 개발자 되기』를 읽으며 구현하였습니다. <br>
+
+깃허브 레포지토리: [The nodeJS board](https://github.com/jieun000/nodeJS-board)
+
+<br>
+
+## 사용 기술
+프론트엔드: Handlebar, CSS, JavaScript(jQuery) <br>
+백엔드: Node.js, Express <br>
+데이터베이스: MongoDB <br>
+형상관리: Git, Github
+
+<br>
+
+## Liked 좋았던 점
+Node.js와 Express를 사용하여 웹 애플리케이션을 개발하는 방법을 익힐 수 있었습니다. 이전에 스터디원분의 도움으로 Express를 간단히 학습한 적이 있었는데, 이번 프로젝트를 통해 그때 익힌 지식을 크게 발전시킬 수 있었습니다. Express를 활용해 웹 애플리케이션을 개발하는 과정은 매우 유익하고 상쾌한 경험이었습니다.
+
+<br>
+
+## Learned 배운 점
+<mark>Node.js와 Express, 그리고 MongoDB</mark>에 대한 호기심과 흥미를 좀 더 깊게 충족시킬 수 있었습니다. 이전부터 이 기술들에 대한 관심이 있었는데, 이번 프로젝트를 통해 직접 활용하고 익히면서 그 중요성과 강점을 더욱 명확히 이해할 수 있었습니다. 또한, <u>Handlebars</u>는 이번 프로젝트를 통해 처음 알게 된 템플릿 엔진입니다. 새로운 기술을 배우고 활용하는 과정이 흥미롭고 유익했습니다.
+
+<br>
+
+## Lacked 부족했던 점
+The Spring board 프로젝트와 같이 빠르게 진행하여 <u>지식을 되새길 시간</u>이 부족했다는 것을 느꼈습니다. 프로젝트를 진행하면서 습득한 지식을 다시 한 번 정리하고 복습하는 시간이 필요하다고 생각했습니다.
+
+<br>
+
+## Longed For 아쉬웠던 점
+댓글 처리에 관한 db 테이블 분리와 그에 따른 코드 개선을 통해 더욱 괜찮은 게시판 웹 애플리케이션을 만들고 싶습니다. 댓글 처리에 대한 기능 개선이 완료되면 사용자들에게 더욱 편리하고 유용한 서비스를 제공할 수 있을 것으로 기대됩니다.

@@ -1,0 +1,49 @@
+---
+layout: post
+title: The Spring board
+image: 202405/pj5.gif
+date: 2024-05-07 10:23:20 +0200
+tags: [project, 프로젝트, 
+java, spring boot, H2, postpreSQL, 
+thymeScript, css, javaScript
+git, github]
+category: project
+toc: true
+---
+## 이 프로젝트는 
+스프링 부트를 기반으로 구축한 간결하고 효율적인 게시판 웹 애플리케이션입니다. Ubuntu를 통한 AWS 서버 배포까지 진행하였습니다.
+
+demo site: [여기로 들어와보세요](http://43.200.36.178/question/list/qna) <br>
+
+깃허브 레포지토리: [The Spring board](https://github.com/jieun000/learning-spring)
+
+<br>
+
+## 사용 기술
+프론트엔드: HTML, CSS, JavaScript, Thymeleaf <br>
+백엔드: Java, Spring Boot <br>
+데이터베이스: H2, PostgreSQL <br>
+형상관리: Git, GitHub
+
+<br>
+
+## 4L 회고
+<br>
+
+## Liked 좋았던 점
+<mark>스프링 부트를 학습</mark>하며 단계별로 게시판을 만들어가는 경험이 아주 좋았습니다. <u>스프링보다 편리한 스프링 부트</u>의 기능과 유연성을 경험하면서 웹 애플리케이션을 만들어가는 과정이 흥미로웠습니다.
+
+<br>
+
+## Learned 배운 점
+<mark>AWS 서버를 통한 배포 방법</mark>을 배웠습니다. 또한, 스프링 부트 프레임워크에 대한 심층적인 이해와 활용법을 습득했으며 빌드 도구로 <u>Maven과 Gradle</u>을 사용하여 의존성 관리와 프로젝트 빌드를 하는 방법에 좀 더 적응하게 되었습니다.
+
+<br>
+
+## Lacked 부족했던 점
+프로젝트를 진행하는 동안 학습한 내용을 정리할 시간을 충분히 가질 필요를 느끼게 되었습니다. 
+
+<br>
+
+## Longed For 아쉬웠던 점
+너무 빠르게 진행되어 아직 복습의 시간이 필요합니다. 프로젝트를 진행하면서 새로운 기술과 개념을 배우고 적용하는 과정이 매우 빠르게 이뤄졌기 때문에, 이를 복습하고 심화 학습하는 시간이 부족했습니다. <u>앞으로도 계속해서 학습해 갈 예정</u>입니다.
