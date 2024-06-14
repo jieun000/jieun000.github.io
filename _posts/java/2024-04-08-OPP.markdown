@@ -67,10 +67,10 @@ public class LowerClass extends UpperClass {
 ```java
 // 메서드 오버로딩
 public class Calculator {
-    int add(int x, int y) {
+    int overLoading(int x, int y) {
         return x + y;
     }
-    double add(double x, double y) {
+    double overLoading(double x, double y) {
         return x + y;
     }
 }
