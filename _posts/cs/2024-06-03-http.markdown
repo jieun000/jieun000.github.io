@@ -1,0 +1,14 @@
+---
+layout: post
+title: HyperText Transfer Protocol(HTTP)
+image: 202406/http.jpeg
+date: 2024-06-03 12:00:00 +1000
+categories: cs
+tags: [http, hypertext_transfer_protocol]
+toc: true
+---
+## HTTP
+
+### HTTP의 특징
+
+### HTTP/version
