@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Three.Js란?
+title: Three.js - 1. 기본 단계
+image: 202406/three-js.svg
 date: 2024-06-18 12:00:00 +1000
 tags: [threeJS, javascript, library, webGPU, webGL]
 categories: javascript
@@ -8,49 +9,64 @@ toc: true
 code: true
 ---
 <div id="canvas-container" style="width: 100%; height: 100%;"></div>
+<div style="text-align: center;">
+    <a href="https://github.com/mrdoob/three.js?tab=readme-ov-file" target="_blank">
+        sources: mrdoob/three.js
+    </a>
+</div>
 
 ## Three.js란?
 Three.js는 <mark>웹에서 3D 그래픽을 쉽게 구현할 수 있도록 돕는 자바스크립트 라이브러리</mark>입니다. <br>
 Three.js를 사용하면 **HTML5 캔버스, SVG, WebGL을 통해 복잡한 3D 장면**을 만들고 렌더링할 수 있습니다. 
 이 라이브러리는 웹 개발자들이 3D 애니메이션, 인터랙티브 비주얼라이제이션, 게임 등을 개발하는 데 매우 유용합니다.
 
-<details style="padding: 10px;">
+<details style="border: 1px solid gray; padding: 10px; margin-bottom: 5px;">
   <summary>GPU(Graphics Processing Unit): GPU는 그래픽 렌더링 작업을 수행하는 특수한 <u>하드웨어</u> 장치.</summary>
     CPU(Central Processing Unit)가 일반적인 계산 작업을 처리하는 반면, <mark>GPU는 대량의 그래픽 데이터를 병렬로 처리</mark>하는 데 최적화되어 있습니다. GPU는 수천 개의 작은 코어를 사용하여 동시에 여러 작업을 병렬로 처리할 수 있어, 복잡한 3D 그래픽스를 빠르고 효율적으로 렌더링할 수 있습니다.
 </details>
 
-<details style="padding: 10px;">
+<details style="border: 1px solid gray; padding: 10px;">
   <summary>WebGL(Web Graphics Library): 웹 브라우저에서 3D 그래픽스를 구현하기 위한 자바스크립트 API.</summary>
-    WebGL은 HTML5 캔버스를 통해 3D 그래픽스를 그릴 수 있도록 도와주며, 이를 위해 <mark>GPU</mark>(Graphics Processing Unit)를 활용합니다. WebGL은 <span title="임베디드">OpenGL ES(Embedded Systems)의 자바스크립트 버전으로, 웹 페이지에서 플러그인 없이 직접적으로 3D 그래픽스를 렌더링할 수 있게 합니다.
+    WebGL은 HTML5 캔버스를 통해 3D 그래픽스를 그릴 수 있도록 도와주며, 이를 위해 <mark>GPU</mark>(Graphics Processing Unit)를 활용합니다. WebGL은 <span title="임베디드 시스템">OpenGL ES(Embedded Systems)</span>의 자바스크립트 버전으로, 웹 페이지에서 플러그인 없이 직접적으로 3D 그래픽스를 렌더링할 수 있게 합니다.
 </details>
 
+<br>
+
+### 기본 단계
 
 ```html
 <div id="canvas-container"></div>
 ```
 
-1. Three.js 라이브러리 로드
+<br>
 
-```javascript
+##### 1. Three.js 라이브러리 로드
+
+```html
 <script type="module">
     import * as THREE from 'https://cdn.jsdelivr.net/npm/three/build/three.module.js';
 </script>
 ```
 
-2. 장면(Scene) 생성: 3D 객체를 배치할 장면을 생성.
+##### 2. 장면(Scene) 생성
+3D 객체를 배치할 장면을 생성.
 
 ```javascript
 const scene = new THREE.Scene();
 ```
 
-3. 카메라(Camera) 설정: 장면을 바라볼 카메라를 설정.
+##### 3. 카메라(Camera) 설정
+장면을 바라볼 카메라를 설정.
 
 ```javascript
+// 원근 카메라: Perspective Camera(FOV, 종횡비, 근거리, 원거리)
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.z = 5;
 ```
 
-4. 렌더러(Renderer) 생성: 렌더러는 <u>장면</u>과 <u>카메라</u>를 사용하여 화면에 3D 그래픽스를 렌더링. WebGLRenderer를 사용하여 렌더러를 생성하고 설정.
+##### 4. 렌더러(Renderer) 생성
+렌더러는 <u>장면</u>과 <u>카메라</u>를 사용하여 화면에 3D 그래픽스를 렌더링. <br>
+WebGLRenderer를 사용하여 렌더러를 생성하고 설정.
 
 ```javascript
 const renderer = new THREE.WebGLRenderer();
@@ -60,7 +76,18 @@ const container = document.getElementById("canvas-container");
 container.appendChild(renderer.domElement);
 ```
 
-6. 애니메이션 설정: 애니메이션 루프를 설정하여 지속적으로 3D 장면을 업데이트하고 렌더링.
+##### 5. 3D 객체 추가
+장면에 3D 객체를 추가.
+
+```javascript
+const geometry = new THREE.BoxGeometry();
+        const material = new THREE.MeshNormalMaterial();
+const cube = new THREE.Mesh(geometry, material);
+scene.add(cube);
+```
+
+##### 6. 애니메이션 설정
+애니메이션 루프를 설정하여 지속적으로 3D 장면을 업데이트하고 렌더링.
 
 ```javascript
 function animate() {
@@ -74,6 +101,53 @@ function animate() {
 animate();
 ```
 
+<br>
+
+### 전체 코드
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="canvas-container" style="width: 100%; height: 100%;"></div>
+
+    <script type="module">
+        import * as THREE from 'https://cdn.jsdelivr.net/npm/three/build/three.module.js';
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 5;
+
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        // document.body.appendChild(renderer.domElement);
+        const container = document.getElementById("canvas-container");
+        container.appendChild(renderer.domElement);
+
+        const geometry = new THREE.BoxGeometry();
+        const material = new THREE.MeshNormalMaterial()
+        const cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
+
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+</html>
+```
+
 <script type="module">
     import * as THREE from 'https://cdn.jsdelivr.net/npm/three/build/three.module.js';
     const container = document.getElementById("canvas-container");
@@ -81,24 +155,39 @@ animate();
     const height = width / 2;
 
     const scene = new THREE.Scene();
-    // 원근 카메라(Perspective Camera) [ FOV, 종횡비, 근거리, 원거리 ]
     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
     camera.position.z = 5;
 
     const renderer = new THREE.WebGLRenderer( { antialias: true } );
+    renderer.setPixelRatio((window.devicePixelRatio) ? window.devicePixelRatio : 1);
     renderer.setSize(width, height);
     container.appendChild(renderer.domElement);
 
     const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    const material = new THREE.MeshNormalMaterial();
     const cube = new THREE.Mesh(geometry, material);
 
     scene.add(cube);
+
+    const resizeObserver = new ResizeObserver(onResize);
+    resizeObserver.observe(container);
+
+    function onResize(entries) {
+        const { width, height } = entries[0].contentRect;
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+        renderer.setSize(width, height);
+        render();
+    }
 
     function animate() {
         requestAnimationFrame(animate);
         cube.rotation.x += 0.01;
         cube.rotation.y += 0.01;
+        renderer.render(scene, camera);
+    }
+
+    function render() {
         renderer.render(scene, camera);
     }
     animate();
