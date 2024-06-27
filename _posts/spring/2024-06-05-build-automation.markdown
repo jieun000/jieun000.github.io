@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 그래들gradle과 메이븐maven
-image: 202404/spring1.jpeg
+image: 202404/spring.jpeg
 date: 2024-06-05 12:00:00 +1000
 tags: [Spring, Spring Boot, 그래들, gradle, 메이븐, maven]
 categories: spring

@@ -1,7 +1,7 @@
 ---
 layout: post
-title: application.properties와 application.yml
-image: 202404/spring1.jpeg
+title: properties와 yml
+image: 202404/spring.jpeg
 date: 2024-06-06 12:00:00 +1000
 tags: [Spring, Spring Boot, application, properties와, yml]
 categories: spring
